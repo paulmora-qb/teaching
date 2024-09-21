@@ -1,1 +1,0 @@
-# Richter's Prediction Notebook
