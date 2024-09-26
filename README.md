@@ -1,6 +1,8 @@
+![logo](./images/steinbeis_logo.png)
+
 # Teaching Repository
 
-This repository contains all kinds of 
+This repository contains the code and slides for the Steinbeis Coding Bootcamp
 
 ## Python
 
