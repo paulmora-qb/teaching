@@ -1,3 +1,8 @@
+# TODO:
+- [ ] Shorten the classes to have Friday's as a revision day.
+- [ ] Align with other teachers.
+
+
 | **Day**   | **Class Name**                          | **Details**                                                                                                                                      |
 |-----------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Day 1** | **Introduction to Cybersecurity**       | **Morning Session:** <br> - Introduction to cybersecurity and its importance. <br> - Overview of key concepts: confidentiality, integrity, and availability (CIA Triad). <br> - Overview of security controls: administrative, technical, and physical. <br> - Current cybersecurity threat landscape and modern security challenges. <br> **Afternoon Session:** <br> - Careers and roles in cybersecurity: analyst, engineer, CISO, etc. <br> - Discussion of key terms and principles like risk, vulnerability, and asset. <br> - Real-world case studies of cybersecurity incidents. |
