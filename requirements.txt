@@ -1,4 +1,5 @@
-statsmodels
 numpy
 pandas
 matplotlib
+jupyter
+nbconvert

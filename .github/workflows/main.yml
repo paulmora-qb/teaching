@@ -1,0 +1,35 @@
+name: Main workflow
+
+on:
+  push:
+    branches:
+      - "**"
+
+#env:
+
+jobs:
+  ##################################################################################################
+  ############### Jupyter Integration Tests ########################################################
+  ##################################################################################################
+
+  run_notebooks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python Environment
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run Jupyter Notebook
+        run: |
+          jupyter nbconvert --to notebook --execute your-notebook.ipynb --output executed-notebook.ipynb

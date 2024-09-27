@@ -1,0 +1,40 @@
+name: "Setup Python Environment"
+description: "Sets up Python environment with dependencies and pre-commit hooks"
+
+inputs:
+  python-version:
+    description: "Version of Python to setup"
+    required: true
+    default: "3.10"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python ${{ inputs.python-version }}
+      uses: actions/setup-python@v5
+      id: setup_python
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Cache Python dependencies
+      uses: actions/cache@v4
+      id: cache_deps
+      with:
+        path: |
+          .venv-checks
+          ~/.cache/pre-commit
+        key: ${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-requirements-${{ hashFiles('requirements.txt', '.pre-commit-config.yaml') }}
+
+    - name: Create virtual environment
+      if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
+      run: |
+        python -m venv .venv-checks
+      shell: bash
+
+    - name: Install dev-requirements
+      if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
+      run: |
+        source .venv-checks/bin/activate
+        pip install -r requirements.txt -U
+        pre-commit install
+      shell: bash
