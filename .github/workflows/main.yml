@@ -29,4 +29,4 @@ jobs:
       - name: Run Jupyter Notebook
         run: |
           source .venv-checks/bin/activate
-          jupyter nbconvert --to notebook --execute ./01_data_science/02_pandas/notebooks/filled/01_intro_to_pandas.ipynb --output executed-notebook.ipynb
+          jupyter nbconvert --to notebook --execute ./00_basics/02_pandas/notebooks/filled/01_intro_to_pandas.ipynb --output executed-notebook.ipynb
