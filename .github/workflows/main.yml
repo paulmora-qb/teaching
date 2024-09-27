@@ -32,4 +32,5 @@ jobs:
 
       - name: Run Jupyter Notebook
         run: |
+          source .venv-checks/bin/activate
           jupyter nbconvert --to notebook --execute your-notebook.ipynb --output executed-notebook.ipynb
