@@ -31,7 +31,7 @@ runs:
         python -m venv .venv-checks
       shell: bash
 
-    - name: Install dev-requirements
+    - name: Install requirements
       if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
       run: |
         source .venv-checks/bin/activate
